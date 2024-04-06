@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders")
 const { MessageEmbed } = require("discord.js")
+const { EmbedBuilder } = require("@discordjs/builders")
 const { QueryType } = require("discord-player")
 
 module.exports = {
@@ -31,12 +32,13 @@ module.exports = {
 		if (!interaction.member.voice.channel) return interaction.reply("You need to be in a Voice Channel to play a song.");
 
         // Create a play queue for the server
-		const queue = await client.player.createQueue(interaction.guild);
+		const queue = await client.player.queues.create(interaction.guild);
 
         // Wait until you are connected to the channel
 		if (!queue.connection) await queue.connect(interaction.member.voice.channel)
 
-		let embed = new MessageEmbed()
+		// let embed = new MessageEmbed()
+        let embed = new EmbedBuilder()
 
 		if (interaction.options.getSubcommand() === "song") {
             let url = interaction.options.getString("url")

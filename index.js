@@ -37,6 +37,7 @@ client.player = new Player(client, {
 })
 
 client.on("ready", () => {
+    console.log(`Logged in as ${client.user.tag}!`);
     // Get all ids of the servers
     const guild_ids = client.guilds.cache.map(guild => guild.id);
 
@@ -44,6 +45,7 @@ client.on("ready", () => {
     const rest = new REST({version: '9'}).setToken(process.env.TOKEN);
     for (const guildId of guild_ids)
     {
+      console.log(guildId)
         rest.put(Routes.applicationGuildCommands(process.env.CLIENT_ID, guildId), 
             {body: commands})
         .then(() => console.log('Successfully updated commands for guild ' + guildId))
