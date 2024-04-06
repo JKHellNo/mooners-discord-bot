@@ -1,0 +1,29 @@
+{
+  "name": "catbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JKHellNo/mooners-discord-bot.git"
+  },
+  "author": "JKHellNo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JKHellNo/mooners-discord-bot/issues"
+  },
+  "homepage": "https://github.com/JKHellNo/mooners-discord-bot#readme",
+  "dependencies": {
+    "@discordjs/rest": "^2.2.0",
+    "@discordjs/voice": "^0.16.1",
+    "discord-api-types": "^0.37.79",
+    "discord-player": "^6.6.8",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "node-pre-gyp": "^0.17.0",
+    "rebuild": "^0.1.2"
+  }
+}
